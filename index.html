@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .gradient-text {
+        background: linear-gradient(to right, #6cff52, #3ec5ff);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 w-full bg-black border-b border-gray-700 p-5 flex justify-between items-center z-50"
+    >
+      <a
+        href="#"
+        class="text-2xl font-bold gradient-text transition-all duration-300 ease-in-out hover:underline hover:decoration-green-400 hover:decoration-2"
+        >Valentino</a
+      >
+      <ul class="hidden md:flex space-x-6">
+        <li>
+          <a
+            href="#home"
+            class="hover:text-green-400 transition-colors duration-300 ease-in-out hover:underline"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="hover:text-green-400 transition-colors duration-300 ease-in-out hover:underline"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#skills"
+            class="hover:text-green-400 transition-colors duration-300 ease-in-out hover:underline"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a
+            href="#certificates"
+            class="hover:text-green-400 transition-colors duration-300 ease-in-out hover:underline"
+            >Certificates</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="hover:text-green-400 transition-colors duration-300 ease-in-out hover:underline"
+            >Projects</a
+          >
+        </li>
+      </ul>
+      <a
+        href="#contact"
+        class="hidden md:block px-4 py-2 border-2 border-white rounded-lg transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
+        >Contact Me</a
+      >
+      <i
+        class="bx bx-menu-alt-right text-3xl md:hidden cursor-pointer transition-all duration-300 ease-in-out"
+        id="menu-toggle"
+      ></i>
+    </nav>
+
+    <!-- Dropdown Menu untuk Mobile -->
+    <div
+      id="dropdown-menu"
+      class="hidden absolute top-16 left-0 w-full bg-black border-t border-gray-700 shadow-lg transition-all duration-300 ease-in-out"
+    >
+      <ul class="space-y-4 p-4 text-left">
+        <li>
+          <a
+            href="#home"
+            class="block hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="block hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#skills"
+            class="block hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a
+            href="#certificates"
+            class="block hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >Certificates</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="block hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="block hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="min-h-screen flex flex-col items-center justify-center text-center px-6 md:px-20 lg:px-40 xl:px-60 pt-24"
+    >
+      <img
+        src="home.jpg"
+        alt="Profile"
+        class="w-56 h-56 md:w-72 md:h-72 rounded-full mt-20"
+      />
+      <h1 class="text-5xl md:text-6xl font-semibold mt-4">
+        Hello, I'm <span class="gradient-text">Tino</span>
+      </h1>
+      <h3 class="text-2xl md:text-3xl mt-2">
+        I'm a <span id="typing-text" class="gradient-text"></span>
+      </h3>
+      <p class="max-w-2xl mt-4 opacity-70 text-lg md:text-xl">
+        Hello, welcome to my personal website. I'm Tino, a web developer and a
+        student. I'm still learning, and this website is one of my projects. I
+        hope you like my website. If you have any suggestions or want to contact
+        me, feel free to get in touch. Thank you for visiting my web!
+      </p>
+      <div class="mt-6 space-x-4">
+        <a
+          href="#contact"
+          class="px-4 py-2 border-2 border-white rounded-lg transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
+          >Contact Me</a
+        >
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 bg-[#1a1a1a]">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 px-6"
+      >
+        <!-- Gambar dengan rasio 16:9 -->
+        <div class="flex-shrink-0 w-full md:w-1/2">
+          <img
+            src="about-me.jpg"
+            alt="About Me"
+            class="w-full aspect-video object-cover rounded-lg"
+          />
+        </div>
+        <!-- Teks dan icon media sosial -->
+        <div
+          class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2"
+        >
+          <h2 class="text-4xl font-bold mb-6 gradient-text">About Me</h2>
+          <p class="text-lg md:text-xl mb-6">
+            Hello! My name is Valentino, and I am a student at Depok 2
+            Vocational High School in Yogjakarta, Indonesia. I am currently in
+            class XI and specializing in the field of technology, which I am
+            very interested in. This passion led me to choose my major, where
+            I've been learning and developing skills. Apart from studies, I also
+            enjoy photography. Capturing moments and exploring different
+            perspectives through the lens of my camera allows me to express my
+            creativity and see the world in unique ways.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >
+              <i class="bx bxl-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >
+              <i class="bx bxl-facebook"></i>
+            </a>
+            <a
+              href="#"
+              class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >
+              <i class="bx bxl-twitter"></i>
+            </a>
+            <a
+              href="#"
+              class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >
+              <i class="bx bxl-linkedin"></i>
+            </a>
+            <a
+              href="#"
+              class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
+            >
+              <i class="bx bxl-discord"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#typing-text", {
+        strings: ["student", "programmer", "developer", "photographer"],
+        loop: true,
+        typeSpeed: 125,
+        backSpeed: 50,
+        startDelay: 1000,
+        backDelay: 1500,
+      });
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const dropdownMenu = document.getElementById("dropdown-menu");
+
+      menuToggle.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
