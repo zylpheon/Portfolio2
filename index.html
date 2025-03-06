@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
+    <title>Valentino | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="icon.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -51,6 +52,12 @@
         transform: translateY(0);
         pointer-events: auto;
         position: relative;
+      }
+
+      /* CSS untuk carousel */
+      #certificate-shadow {
+        box-shadow: rgba(255, 255, 255, 0.2) 0px 20px 25px -15px,
+          rgba(255, 255, 255, 0.2) 0px 10px 10px -5px;
       }
     </style>
   </head>
@@ -167,12 +174,12 @@
     <!-- Home Section -->
     <section
       id="home"
-      class="min-h-screen flex flex-col items-center justify-center text-center px-6 md:px-20 lg:px-40 xl:px-60 pt-24"
+      class="min-h-screen flex flex-col items-center justify-center text-center px-6 md:px-20 lg:px-40 xl:px-60 pt-24 finisher-header"
     >
       <img
         src="home.jpg"
         alt="Profile"
-        class="w-56 h-56 md:w-72 md:h-72 rounded-full mt-20 shadow-[0_0_20px_white] transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_white]"
+        class="w-56 h-56 md:w-72 md:h-72 rounded-full shadow-[0_0_20px_white] transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_white]"
       />
       <h1 class="text-5xl md:text-6xl font-semibold mt-4">
         Hello, I'm <span class="gradient-text">Tino</span>
@@ -186,7 +193,7 @@
         hope you like my website. If you have any suggestions or want to contact
         me, feel free to get in touch. Thank you for visiting my web!
       </p>
-      <div class="mt-6 space-x-4">
+      <div class="mt-6 mb-10 space-x-4">
         <a
           href="#contact"
           class="px-4 py-2 border-2 border-white rounded-lg transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
@@ -262,6 +269,9 @@
         <h2 class="text-4xl font-bold text-center mb-8 gradient-text">
           Skills
         </h2>
+        <p class="text-center text-white text-sm md:text-base mb-8">
+          Here are some of my skills that I have developed over time.
+        </p>
         <!-- Tab Buttons -->
         <div class="flex justify-center space-x-4 mb-8">
           <button
@@ -299,7 +309,7 @@
                 alt="HTML5"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">HTML5</p>
+              <p class="mt-2 text-xs md:text-sm">HTML5</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -309,7 +319,7 @@
                 alt="CSS3"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">CSS3</p>
+              <p class="mt-2 text-xs md:text-sm">CSS3</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -319,7 +329,7 @@
                 alt="Tailwind CSS"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">Tailwind CSS</p>
+              <p class="mt-2 text-xs md:text-sm">Tailwind CSS</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -329,7 +339,7 @@
                 alt="Bootstrap"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">Bootstrap</p>
+              <p class="mt-2 text-xs md:text-sm">Bootstrap</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -339,7 +349,7 @@
                 alt="Javascript"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">Javascript</p>
+              <p class="mt-2 text-xs md:text-sm">Javascript</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -349,7 +359,7 @@
                 alt="NodeJS"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">NodeJS</p>
+              <p class="mt-2 text-xs md:text-sm">NodeJS</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -359,7 +369,7 @@
                 alt="jQuery"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">jQuery</p>
+              <p class="mt-2 text-xs md:text-sm">jQuery</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -369,7 +379,7 @@
                 alt="PHP"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">PHP</p>
+              <p class="mt-2 text-xs md:text-sm">PHP</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -379,7 +389,7 @@
                 alt="PHPmyadmin"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">PHPmyadmin</p>
+              <p class="mt-2 text-xs md:text-sm">PHPmyadmin</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -389,7 +399,7 @@
                 alt="MySQL"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">MySQL</p>
+              <p class="mt-2 text-xs md:text-sm">MySQL</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -399,7 +409,7 @@
                 alt="C++"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">C++</p>
+              <p class="mt-2 text-xs md:text-sm">C++</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -409,7 +419,7 @@
                 alt="Github"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">Github</p>
+              <p class="mt-2 text-xs md:text-sm">Github</p>
             </div>
           </div>
           <!-- Tools (hidden by default) -->
@@ -425,7 +435,7 @@
                 alt="Visual Studio"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">Visual Studio</p>
+              <p class="mt-2 text-xs md:text-sm">Visual Studio</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -435,7 +445,7 @@
                 alt="XAMPP"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">XAMPP</p>
+              <p class="mt-2 text-xs md:text-sm">XAMPP</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -445,7 +455,7 @@
                 alt="Laragon"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">Laragon</p>
+              <p class="mt-2 text-xs md:text-sm">Laragon</p>
             </div>
           </div>
           <!-- Designs (hidden by default) -->
@@ -461,17 +471,7 @@
                 alt="Canva"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">Canva</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/skills/figma.png"
-                alt="Figma"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2">Figma</p>
+              <p class="mt-2 text-xs md:text-sm">Canva</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
@@ -481,9 +481,78 @@
                 alt="draw.io"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2">draw.io</p>
+              <p class="mt-2 text-xs md:text-sm">draw.io</p>
+            </div>
+            <div
+              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
+            >
+              <img
+                src="/skills/figma.png"
+                alt="Figma"
+                class="w-20 h-20 object-cover rounded"
+              />
+              <p class="mt-2 text-xs md:text-sm">Figma</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-16 bg-[#1a1a1a]">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-8 gradient-text">
+          Certificates
+        </h2>
+        <p class="text-center text-white text-sm md:text-base mb-8">
+          Here are some of my certificates and achievements.
+        </p>
+        <!-- Carousel container dengan lebar terbatas -->
+        <div class="relative max-w-xl mx-auto" id="certificate-shadow">
+          <div id="carousel" class="overflow-hidden">
+            <div
+              id="carousel-inner"
+              class="flex transition-transform duration-500"
+            >
+              <!-- Slide 1 -->
+              <div class="flex-shrink-0 w-full">
+                <img
+                  src="/certificates/dicoding1.jpg"
+                  alt="Certificate 1"
+                  class="mx-auto object-contain"
+                />
+              </div>
+              <!-- Slide 2 -->
+              <div class="flex-shrink-0 w-full">
+                <img
+                  src="/certificates/dicoding2.jpg"
+                  alt="Certificate 2"
+                  class="mx-auto object-contain"
+                />
+              </div>
+              <!-- Slide 3 -->
+              <div class="flex-shrink-0 w-full">
+                <img
+                  src="/certificates/dicoding3.jpg"
+                  alt="Certificate 3"
+                  class="mx-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Carousel Controls dengan icon Boxicons -->
+          <button
+            id="prev"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full"
+          >
+            <i class="bx bx-left-arrow-alt"></i>
+          </button>
+          <button
+            id="next"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full"
+          >
+            <i class="bx bx-right-arrow-alt"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -558,6 +627,58 @@
       document.getElementById("btn-designs").addEventListener("click", () => {
         showTab("designs");
         setActive(document.getElementById("btn-designs"));
+      });
+
+      // Fungsi untuk mengatur carousel
+      const carouselInner = document.getElementById("carousel-inner");
+      const slides = carouselInner.children;
+      const totalSlides = slides.length;
+      let currentIndex = 0;
+
+      document.getElementById("next").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+
+      document.getElementById("prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+
+      function updateCarousel() {
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+    </script>
+    <script src="js/finisher-header.es5.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      new FinisherHeader({
+        count: 40,
+        size: {
+          min: 2,
+          max: 4,
+          pulse: 0,
+        },
+        speed: {
+          x: {
+            min: 0,
+            max: 0.3,
+          },
+          y: {
+            min: 0,
+            max: 0.3,
+          },
+        },
+        colors: {
+          background: "#000000",
+          particles: ["#6cff52", "#46e97e", "#3ec5ff"],
+        },
+        blending: "screen",
+        opacity: {
+          center: 0.8,
+          edge: 0.5,
+        },
+        skew: 0,
+        shapes: ["s"],
       });
     </script>
   </body>
