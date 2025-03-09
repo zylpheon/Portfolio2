@@ -1,0 +1,59 @@
+html {
+  scroll-behavior: smooth;
+}
+.gradient-text {
+  background: linear-gradient(to right, #6cff52, #3ec5ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+/* Styling untuk loading overlay */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+/* CSS untuk dropdown-menu */
+#dropdown-menu {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+}
+/* Kelas tambahan "open" untuk state terbuka */
+#dropdown-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Atur transisi untuk setiap konten tab */
+.tab-content {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Tab yang disembunyikan: opacity 0, bergeser ke atas */
+.tab-hide {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+/* Tab yang ditampilkan: opacity 1, posisi normal */
+.tab-show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+/* CSS untuk carousel */
+#white-shadow {
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 20px 25px -15px,
+    rgba(255, 255, 255, 0.2) 0px 10px 10px -5px;
+}

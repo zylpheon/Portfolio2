@@ -10,58 +10,20 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      .gradient-text {
-        background: linear-gradient(to right, #6cff52, #3ec5ff);
-        -webkit-background-clip: text;
-        color: transparent;
-      }
-      /* CSS untuk dropdown-menu */
-      #dropdown-menu {
-        transition: all 0.3s ease-in-out;
-        transform: translateY(-20px);
-        opacity: 0;
-        pointer-events: none;
-      }
-      /* Kelas tambahan "open" untuk state terbuka */
-      #dropdown-menu.open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-      /* Atur transisi untuk setiap konten tab */
-      .tab-content {
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
-
-      /* Tab yang disembunyikan: opacity 0, bergeser ke atas */
-      .tab-hide {
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        position: absolute;
-        width: 100%;
-      }
-
-      /* Tab yang ditampilkan: opacity 1, posisi normal */
-      .tab-show {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-        position: relative;
-      }
-
-      /* CSS untuk carousel */
-      #white-shadow {
-        box-shadow: rgba(255, 255, 255, 0.2) 0px 20px 25px -15px,
-          rgba(255, 255, 255, 0.2) 0px 10px 10px -5px;
-      }
-    </style>
+    <link rel="stylesheet" href="/src/css/styles.css" />
   </head>
   <body class="bg-black text-white">
+    <!-- Loading Overlay -->
+    <div id="loader">
+      <!-- Bisa tambahkan spinner atau teks loading -->
+      <div class="text-center">
+        <div
+          class="w-16 h-16 border-4 border-t-4 border-gray-300 rounded-full animate-spin"
+        ></div>
+        <p class="mt-4 text-white">Loading...</p>
+      </div>
+    </div>
+
     <!-- Navbar -->
     <nav
       class="fixed top-0 w-full bg-black bg-opacity-70 backdrop-blur-md border-b border-gray-700 p-5 flex justify-between items-center z-50"
@@ -120,7 +82,7 @@
       ></i>
     </nav>
 
-    <!-- Dropdown Menu untuk Mobile (fixed agar sticky saat scroll) -->
+    <!-- Dropdown Menu for Mobile -->
     <div
       id="dropdown-menu"
       class="fixed top-16 left-0 w-full bg-black border-t border-gray-700 shadow-lg transition-all duration-300 ease-in-out z-40"
@@ -235,31 +197,31 @@
           </p>
           <div class="flex space-x-4">
             <a
-              href="#"
+              href="https://www.instagram.com/valenttino200/"
               class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
             >
               <i class="bx bxl-instagram"></i>
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/valenttino403"
               class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
             >
               <i class="bx bxl-facebook"></i>
             </a>
             <a
-              href="#"
+              href="https://x.com/ValentinoLR3"
               class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
             >
               <i class="bx bxl-twitter"></i>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/valentino-l-r-ba21b6295/"
               class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
             >
               <i class="bx bxl-linkedin"></i>
             </a>
             <a
-              href="#"
+              href="https://discordapp.com/users/zylpheon"
               class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
             >
               <i class="bx bxl-discord"></i>
@@ -604,15 +566,18 @@
             id="white-shadow"
           >
             <img
-              src="/src/certificates/dicoding1.jpg"
+              src="/src/projects/project1.jpg"
               alt="Project 1"
               class="w-full object-cover"
             />
             <div class="p-4">
-              <h3 class="text-xl font-bold text-white">Project Title 1</h3>
-              <p class="text-white text-sm mb-4">Project Subtitle 1</p>
+              <h3 class="text-xl font-bold text-white">Carousel Cafe</h3>
+              <p class="text-white text-sm mb-4">
+                A school assignment project showcasing a cozy cafe and bakery
+                ambiance.
+              </p>
               <a
-                href="#"
+                href="https://carousel.my.id/"
                 class="inline-block px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition-colors duration-300 ease-in-out"
               >
                 Visit Site
@@ -625,15 +590,17 @@
             id="white-shadow"
           >
             <img
-              src="/src/certificates/dicoding1.jpg"
+              src="/src/projects/project2.jpg"
               alt="Project 2"
               class="w-full object-cover"
             />
             <div class="p-4">
-              <h3 class="text-xl font-bold text-white">Project Title 2</h3>
-              <p class="text-white text-sm mb-4">Project Subtitle 2</p>
+              <h3 class="text-xl font-bold text-white">Memory Card</h3>
+              <p class="text-white text-sm mb-4">
+                Stay tuned for an upcoming project featuring innovative design
+                and exciting new features.
+              </p>
               <a
-                href="#"
                 class="inline-block px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition-colors duration-300 ease-in-out"
               >
                 Visit Site
@@ -646,18 +613,20 @@
             id="white-shadow"
           >
             <img
-              src="/src/certificates/dicoding1.jpg"
+              src="/src/projects/project3.jpg"
               alt="Project 3"
               class="w-full object-cover"
             />
             <div class="p-4">
-              <h3 class="text-xl font-bold text-white">Project Title 3</h3>
-              <p class="text-white text-sm mb-4">Project Subtitle 3</p>
+              <h3 class="text-xl font-bold text-white">Coming Soon</h3>
+              <p class="text-white text-sm mb-4">
+                Stay tuned for an upcoming project featuring innovative design
+                and exciting new features.
+              </p>
               <a
-                href="#"
                 class="inline-block px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition-colors duration-300 ease-in-out"
               >
-                Visit Site
+                Coming Soon
               </a>
             </div>
           </div>
@@ -708,7 +677,7 @@
           >
             Send Message
           </button>
-          <!-- Element untuk menampilkan pesan -->
+          <!-- Element for menampilkan pesan -->
           <p id="form-feedback" class="mt-4 text-center text-green-400 hidden">
             Your message has been sent.
           </p>
@@ -726,31 +695,31 @@
     <footer class="py-8 bg-[#222222]">
       <div class="flex space-x-4 text-center justify-center">
         <a
-          href="#"
+          href="https://www.instagram.com/valenttino200/"
           class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
         >
           <i class="bx bxl-instagram"></i>
         </a>
         <a
-          href="#"
+          href="https://www.facebook.com/valenttino403"
           class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
         >
           <i class="bx bxl-facebook"></i>
         </a>
         <a
-          href="#"
+          href="https://x.com/ValentinoLR3"
           class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
         >
           <i class="bx bxl-twitter"></i>
         </a>
         <a
-          href="#"
+          href="https://www.linkedin.com/in/valentino-l-r-ba21b6295/"
           class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
         >
           <i class="bx bxl-linkedin"></i>
         </a>
         <a
-          href="#"
+          href="https://discordapp.com/users/zylpheon"
           class="text-3xl hover:text-green-400 transition-colors duration-300 ease-in-out"
         >
           <i class="bx bxl-discord"></i>
@@ -760,169 +729,25 @@
         <p class="text-white">&copy; 2025 Valentino • All rights reserved.</p>
       </div>
     </footer>
-    <!-- Script untuk Typed -->
+    <!-- Script for loading -->
+    <script src="/src/js/loading.js"></script>
+    <!-- Script for Typed -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-      var typed = new Typed("#typing-text", {
-        strings: ["student", "programmer", "developer", "photographer"],
-        loop: true,
-        typeSpeed: 125,
-        backSpeed: 50,
-        startDelay: 1000,
-        backDelay: 1500,
-      });
-    </script>
-    <!-- Script untuk Carousel -->
-    <script>
-      // Fungsi untuk mengatur carousel
-      const carouselInner = document.getElementById("carousel-inner");
-      const slides = carouselInner.children;
-      const totalSlides = slides.length;
-      let currentIndex = 0;
-
-      document.getElementById("next").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel();
-      });
-
-      document.getElementById("prev").addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel();
-      });
-
-      function updateCarousel() {
-        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-      }
-    </script>
-    <!-- Script untuk dropdown-menu -->
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const dropdownMenu = document.getElementById("dropdown-menu");
-
-      menuToggle.addEventListener("click", () => {
-        dropdownMenu.classList.toggle("open");
-      });
-
-      // Agar dropdown tertutup otomatis saat link di klik
-      const dropdownLinks = dropdownMenu.querySelectorAll("a");
-      dropdownLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          dropdownMenu.classList.remove("open");
-        });
-      });
-    </script>
-    <!-- Script untuk tab -->
-    <script>
-      // Fungsi untuk mengganti tab dengan animasi
-      function showTab(activeId) {
-        const tabs = ["tech", "tools", "designs"];
-        tabs.forEach((tabId) => {
-          const tabElement = document.getElementById(tabId);
-          if (tabId === activeId) {
-            tabElement.classList.remove("tab-hide");
-            tabElement.classList.add("tab-show");
-          } else {
-            tabElement.classList.remove("tab-show");
-            tabElement.classList.add("tab-hide");
-          }
-        });
-      }
-
-      // Fungsi untuk mengatur status aktif pada tombol tab
-      const tabButtons = document.querySelectorAll(".tab-btn");
-      function clearActive() {
-        tabButtons.forEach((btn) => {
-          btn.classList.remove("bg-white", "text-gray-900");
-          btn.classList.add("hover:bg-white", "hover:text-gray-900");
-        });
-      }
-
-      function setActive(btn) {
-        clearActive();
-        btn.classList.remove("hover:bg-white", "hover:text-gray-900");
-        btn.classList.add("bg-white", "text-gray-900");
-      }
-
-      // Event listeners untuk tombol tab
-      document.getElementById("btn-tech").addEventListener("click", () => {
-        showTab("tech");
-        setActive(document.getElementById("btn-tech"));
-      });
-
-      document.getElementById("btn-tools").addEventListener("click", () => {
-        showTab("tools");
-        setActive(document.getElementById("btn-tools"));
-      });
-
-      document.getElementById("btn-designs").addEventListener("click", () => {
-        showTab("designs");
-        setActive(document.getElementById("btn-designs"));
-      });
-    </script>
-    <!-- Script untuk Finisher Header -->
+    <script src="/src/js/typed.js"></script>
+    <!-- Script for Carousel -->
+    <script src="/src/js/carousel.js"></script>
+    <!-- Script for dropdown-menu -->
+    <script src="/src/js/dropdown.js"></script>
+    <!-- Script for tab -->
+    <script src="/src/js/tab.js"></script>
+    <!-- Script for Finisher Header -->
     <script
       src="/src/js/finisher-header.es5.min.js"
       type="text/javascript"
     ></script>
-    <!-- Script untuk particle -->
-    <script type="text/javascript">
-      new FinisherHeader({
-        count: 40,
-        size: {
-          min: 2,
-          max: 4,
-          pulse: 0,
-        },
-        speed: {
-          x: {
-            min: 0,
-            max: 0.3,
-          },
-          y: {
-            min: 0,
-            max: 0.3,
-          },
-        },
-        colors: {
-          background: "#000000",
-          particles: ["#6cff52", "#46e97e", "#3ec5ff"],
-        },
-        blending: "screen",
-        opacity: {
-          center: 0.8,
-          edge: 0.5,
-        },
-        skew: 0,
-        shapes: ["s"],
-      });
-    </script>
-    <!-- Script untuk form -->
-    <script>
-      const form = document.getElementById("contact-form");
-      const feedback = document.getElementById("form-feedback");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Ambil nilai dari input name dan message
-        const name = document.getElementById("name").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        // Jika salah satu field kosong, jangan kirim dan berikan peringatan
-        if (!name || !message) {
-          alert("Please fill in all fields.");
-          return;
-        }
-
-        // Jika kedua field terisi, tampilkan pesan dan reset form
-        feedback.classList.remove("hidden");
-        form.reset();
-
-        // Sembunyikan pesan setelah 3 detik
-        setTimeout(() => {
-          feedback.classList.add("hidden");
-        }, 3000);
-      });
-    </script>
+    <!-- Script for particle -->
+    <script type="text/javascript" src="/src/js/particle.js"></script>
+    <!-- Script for form -->
+    <script src="/src/js/form.js"></script>
   </body>
 </html>
