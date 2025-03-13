@@ -180,7 +180,7 @@
           <img
             src="/src/images/about-me.jpg"
             alt="About Me"
-            class="w-full aspect-video object-cover transition-transform duration-300 hover:scale-105"
+            class="w-full aspect-video object-cover transition-transform duration-300 rounded-lg hover:scale-105"
             id="white-shadow"
           />
         </div>
@@ -240,234 +240,170 @@
     <!-- Skills Section -->
     <section class="py-16 bg-[#333333]">
       <div class="max-w-7xl mx-auto px-6">
-        <!-- Judul Skills dengan gradient -->
+        <!-- Main Title -->
         <h2 class="text-4xl font-bold text-center mb-8 gradient-text">
-          Skills
+          My Skills
         </h2>
         <p class="text-center text-white text-sm md:text-base mb-8">
-          Here are some of my skills that I have developed over time.
+          Here are some of my skills divided by categories.
         </p>
-        <!-- Tab Buttons -->
-        <div class="flex justify-center space-x-4 mb-8">
+        <!-- Category Buttons Row -->
+        <div class="flex justify-center items-center space-x-4 mb-8">
           <button
-            id="btn-tech"
-            class="tab-btn active-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out bg-white text-gray-900"
+            id="btn-frontend"
+            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out bg-white text-gray-900"
           >
-            <strong>Techstacks</strong>
+            <strong>Frontend Development</strong>
           </button>
           <button
-            id="btn-tools"
+            id="btn-backend"
             class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
           >
-            <strong>Tools</strong>
+            <strong>Backend Development</strong>
           </button>
           <button
-            id="btn-designs"
+            id="btn-iot"
             class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
           >
-            <strong>Designs</strong>
+            <strong>IoT Development</strong>
+          </button>
+          <button
+            id="btn-linux"
+            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
+          >
+            <strong>Linux Management</strong>
+          </button>
+          <button
+            id="btn-network"
+            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
+          >
+            <strong>Network Administration</strong>
+          </button>
+          <button
+            id="btn-project"
+            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
+          >
+            <strong>Project Management</strong>
           </button>
         </div>
         <!-- Tab Content -->
-        <div id="tab-content" class="flex flex-col items-center relative">
-          <!-- Techstacks -->
+        <div id="tab-content" class="relative">
+          <!-- Frontend Development Tab (default active) -->
           <div
-            id="tech"
-            class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 w-full tab-content tab-show"
+            id="frontend"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-show"
           >
-            <!-- Contoh item -->
+            <!-- Sample Frontend Skill -->
             <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg4"
+              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
             >
               <img
                 src="/src/skills/html.png"
                 alt="HTML5"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2 text-xs md:text-sm">HTML5</p>
+              <p class="mt-2 text-xs md:text-sm text-center">HTML5</p>
             </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/css.png"
-                alt="CSS3"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">CSS3</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/tailwind.png"
-                alt="Tailwind CSS"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">Tailwind CSS</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/bootstrap.png"
-                alt="Bootstrap"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">Bootstrap</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/js.png"
-                alt="Javascript"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">Javascript</p>
-            </div>
+            <!-- Add more frontend skills as needed -->
+          </div>
+          <!-- Backend Development Tab -->
+          <div
+            id="backend"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
+          >
+            <!-- Sample Backend Skill -->
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
             >
               <img
                 src="/src/skills/nodejs.png"
-                alt="NodeJS"
+                alt="Node.js"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2 text-xs md:text-sm">NodeJS</p>
+              <p class="mt-2 text-xs md:text-sm text-center">Node.js</p>
+            </div>
+            <!-- Add more backend skills as needed -->
+          </div>
+          <!-- IoT Development Tab -->
+          <div
+            id="iot"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
+          >
+            <!-- Sample IoT Skill -->
+            <div
+              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
+            >
+              <img
+                src="/src/skills/arduino.png"
+                alt="Arduino"
+                class="w-20 h-20 object-cover rounded"
+              />
+              <p class="mt-2 text-xs md:text-sm text-center">Arduino</p>
+            </div>
+            <!-- Add more IoT skills as needed -->
+          </div>
+          <!-- Linux Management Tab -->
+          <div
+            id="linux"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
+          >
+            <!-- Sample Linux Management Skill -->
+            <div
+              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
+            >
+              <img
+                src="/src/skills/linux.png"
+                alt="Linux"
+                class="w-20 h-20 object-cover rounded"
+              />
+              <p class="mt-2 text-xs md:text-sm text-center">Linux</p>
+            </div>
+            <!-- Add more Linux Management skills as needed -->
+          </div>
+          <!-- Network Administration Tab -->
+          <div
+            id="network"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
+          >
+            <!-- Sample Network Administration Skills -->
+            <div
+              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
+            >
+              <img
+                src="/src/skills/cisco.png"
+                alt="Cisco"
+                class="w-20 h-20 object-cover rounded"
+              />
+              <p class="mt-2 text-xs md:text-sm text-center">Cisco</p>
             </div>
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
             >
               <img
-                src="/src/skills/jquery.png"
-                alt="jQuery"
+                src="/src/skills/mikrotik.png"
+                alt="Mikrotik"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2 text-xs md:text-sm">jQuery</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/php.png"
-                alt="PHP"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">PHP</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/phpmyadmin.png"
-                alt="PHPmyadmin"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">PHPmyadmin</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/mysql.png"
-                alt="MySQL"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">MySQL</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/c++.png"
-                alt="C++"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">C++</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/github.png"
-                alt="Github"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">Github</p>
+              <p class="mt-2 text-xs md:text-sm text-center">Mikrotik</p>
             </div>
           </div>
-          <!-- Tools (hidden by default) -->
+          <!-- Project Management Tab -->
           <div
-            id="tools"
-            class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 w-full tab-content tab-hide"
+            id="project"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
           >
+            <!-- Sample Project Management Skill -->
             <div
               class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
             >
               <img
-                src="/src/skills/vscode.png"
-                alt="Visual Studio"
+                src="/src/skills/git.png"
+                alt="Git"
                 class="w-20 h-20 object-cover rounded"
               />
-              <p class="mt-2 text-xs md:text-sm">Visual Studio</p>
+              <p class="mt-2 text-xs md:text-sm text-center">Git</p>
             </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/xampp.png"
-                alt="XAMPP"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">XAMPP</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/laragon.png"
-                alt="Laragon"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">Laragon</p>
-            </div>
-          </div>
-          <!-- Designs (hidden by default) -->
-          <div
-            id="designs"
-            class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 w-full tab-content tab-hide"
-          >
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/canva.png"
-                alt="Canva"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">Canva</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/drawio.png"
-                alt="draw.io"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">draw.io</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/figma.png"
-                alt="Figma"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm">Figma</p>
-            </div>
+            <!-- Add more project management skills as needed -->
           </div>
         </div>
       </div>
@@ -595,7 +531,7 @@
               class="w-full object-cover"
             />
             <div class="p-4">
-              <h3 class="text-xl font-bold text-white">Memory Card</h3>
+              <h3 class="text-xl font-bold text-white">Coming Soon</h3>
               <p class="text-white text-sm mb-4">
                 Stay tuned for an upcoming project featuring innovative design
                 and exciting new features.

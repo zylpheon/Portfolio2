@@ -1,6 +1,6 @@
-// Fungsi untuk mengganti tab dengan animasi
+// Function to show the selected tab content with animation
 function showTab(activeId) {
-  const tabs = ["tech", "tools", "designs"];
+  const tabs = ["frontend", "backend", "iot", "linux", "network", "project"];
   tabs.forEach((tabId) => {
     const tabElement = document.getElementById(tabId);
     if (tabId === activeId) {
@@ -13,7 +13,7 @@ function showTab(activeId) {
   });
 }
 
-// Fungsi untuk mengatur status aktif pada tombol tab
+// Function to clear active button styling
 const tabButtons = document.querySelectorAll(".tab-btn");
 function clearActive() {
   tabButtons.forEach((btn) => {
@@ -28,18 +28,28 @@ function setActive(btn) {
   btn.classList.add("bg-white", "text-gray-900");
 }
 
-// Event listeners untuk tombol tab
-document.getElementById("btn-tech").addEventListener("click", () => {
-  showTab("tech");
-  setActive(document.getElementById("btn-tech"));
+// Event listeners for the category buttons
+document.getElementById("btn-frontend").addEventListener("click", () => {
+  showTab("frontend");
+  setActive(document.getElementById("btn-frontend"));
 });
-
-document.getElementById("btn-tools").addEventListener("click", () => {
-  showTab("tools");
-  setActive(document.getElementById("btn-tools"));
+document.getElementById("btn-backend").addEventListener("click", () => {
+  showTab("backend");
+  setActive(document.getElementById("btn-backend"));
 });
-
-document.getElementById("btn-designs").addEventListener("click", () => {
-  showTab("designs");
-  setActive(document.getElementById("btn-designs"));
+document.getElementById("btn-iot").addEventListener("click", () => {
+  showTab("iot");
+  setActive(document.getElementById("btn-iot"));
+});
+document.getElementById("btn-linux").addEventListener("click", () => {
+  showTab("linux");
+  setActive(document.getElementById("btn-linux"));
+});
+document.getElementById("btn-network").addEventListener("click", () => {
+  showTab("network");
+  setActive(document.getElementById("btn-network"));
+});
+document.getElementById("btn-project").addEventListener("click", () => {
+  showTab("project");
+  setActive(document.getElementById("btn-project"));
 });
