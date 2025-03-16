@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Valentino | Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/src/images/icon.png" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,6 +34,7 @@
       >
         Valentino
       </a>
+      <!-- Navbar Desktop (hanya muncul pada medium ke atas) -->
       <ul class="hidden md:flex space-x-6">
         <li>
           <a
@@ -71,18 +72,21 @@
           >
         </li>
       </ul>
+      <!-- Tombol Contact (hanya muncul pada desktop) -->
       <a
         href="#contact"
         class="hidden md:block px-4 py-2 border-2 border-white rounded-lg transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
-        ><strong>Contact Me</strong></a
       >
+        <strong>Contact Me</strong>
+      </a>
+      <!-- Icon Hamburger (hanya tampil pada mobile) -->
       <i
-        class="bx bx-menu-alt-right text-3xl md:hidden cursor-pointer transition-all duration-300 ease-in-out"
+        class="bx bx-menu-alt-right text-3xl block md:hidden cursor-pointer transition-all duration-300 ease-in-out"
         id="menu-toggle"
       ></i>
     </nav>
 
-    <!-- Dropdown Menu for Mobile -->
+    <!-- Dropdown Menu untuk Mobile -->
     <div
       id="dropdown-menu"
       class="fixed top-16 left-0 w-full bg-black border-t border-gray-700 shadow-lg transition-all duration-300 ease-in-out z-40"
@@ -238,172 +242,371 @@
     ></div>
 
     <!-- Skills Section -->
-    <section class="py-16 bg-[#333333]">
-      <div class="max-w-7xl mx-auto px-6">
+    <section class="py-16 bg-[#333333] overflow-hidden">
+      <div class="container mx-auto px-4">
         <!-- Main Title -->
-        <h2 class="text-4xl font-bold text-center mb-8 gradient-text">
-          My Skills
+        <h2 class="text-4xl font-bold mb-2 gradient-text text-center">
+          Skills
         </h2>
-        <p class="text-center text-white text-sm md:text-base mb-8">
-          Here are some of my skills divided by categories.
+        <p class="text-center text-white text-sm md:text-base mb-12">
+          Here are some of my skills.
         </p>
-        <!-- Category Buttons Row -->
-        <div class="flex justify-center items-center space-x-4 mb-8">
-          <button
-            id="btn-frontend"
-            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out bg-white text-gray-900"
-          >
-            <strong>Frontend Development</strong>
-          </button>
-          <button
-            id="btn-backend"
-            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
-          >
-            <strong>Backend Development</strong>
-          </button>
-          <button
-            id="btn-iot"
-            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
-          >
-            <strong>IoT Development</strong>
-          </button>
-          <button
-            id="btn-linux"
-            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
-          >
-            <strong>Linux Management</strong>
-          </button>
-          <button
-            id="btn-network"
-            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
-          >
-            <strong>Network Administration</strong>
-          </button>
-          <button
-            id="btn-project"
-            class="tab-btn px-4 py-2 border border-white rounded transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
-          >
-            <strong>Project Management</strong>
-          </button>
-        </div>
-        <!-- Tab Content -->
-        <div id="tab-content" class="relative">
-          <!-- Frontend Development Tab (default active) -->
+        <!-- Layout: Mobile/Tablet: button kategori di atas, Desktop: dua kolom -->
+        <div class="flex flex-col gap-10 w-4/5 mx-auto">
+          <!-- Kolom Button Kategori (lebih kecil lebarnya pada desktop) -->
           <div
-            id="frontend"
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-show"
+            class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:flex lg:flex-row lg:w-full"
           >
-            <!-- Sample Frontend Skill -->
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
+            <button
+              id="btn-frontend"
+              class="w-full py-2 border border-gray-400 rounded bg-[#333333] text-white font-bold transition ease duration-300 hover:bg-white hover:text-black"
             >
-              <img
-                src="/src/skills/html.png"
-                alt="HTML5"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm text-center">HTML5</p>
-            </div>
-            <!-- Add more frontend skills as needed -->
+              Frontend Development
+            </button>
+            <button
+              id="btn-backend"
+              class="w-full py-2 border border-gray-400 rounded bg-[#333333] text-white font-bold transition ease duration-300 hover:bg-white hover:text-black"
+            >
+              Backend Development
+            </button>
+            <button
+              id="btn-iot"
+              class="w-full py-2 border border-gray-400 rounded bg-[#333333] text-white font-bold transition ease duration-300 hover:bg-white hover:text-black"
+            >
+              IoT Development
+            </button>
+            <button
+              id="btn-linux"
+              class="w-full py-2 border border-gray-400 rounded bg-[#333333] text-white font-bold transition ease duration-300 hover:bg-white hover:text-black"
+            >
+              Linux Management
+            </button>
+            <button
+              id="btn-network"
+              class="w-full py-2 border border-gray-400 rounded bg-[#333333] text-white font-bold transition ease duration-300 hover:bg-white hover:text-black"
+            >
+              Network Administration
+            </button>
+            <button
+              id="btn-project"
+              class="w-full py-2 border border-gray-400 rounded bg-[#333333] text-white font-bold transition ease duration-300 hover:bg-white hover:text-black"
+            >
+              Project Management
+            </button>
           </div>
-          <!-- Backend Development Tab -->
-          <div
-            id="backend"
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
-          >
-            <!-- Sample Backend Skill -->
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/nodejs.png"
-                alt="Node.js"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm text-center">Node.js</p>
+
+          <!-- Kolom Tab Content -->
+          <div>
+            <div class="rounded">
+              <div class="tab-content relative">
+                <!-- Frontend Development Tab (default aktif) -->
+                <div id="frontend" class="tab-pane tab-show">
+                  <h3 class="text-white text-2xl mb-2 text-center">
+                    Frontend Development
+                  </h3>
+                  <p
+                    class="text-gray-400 mb-6 text-center w-full md:w-3/5 mx-auto"
+                  >
+                    Frontend Development is centered on crafting interactive,
+                    visually appealing user interfaces that provide a seamless
+                    user experience. By leveraging modern frameworks, responsive
+                    design techniques, and advanced styling tools, I create
+                    dynamic and accessible web applications that effectively
+                    bridge user needs with engaging digital interactions.
+                  </p>
+                  <!-- Flex container untuk skill card -->
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <!-- Contoh Skill: HTML5 -->
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/html.png"
+                        alt="HTML5"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">HTML5</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/css.png"
+                        alt="CSS3"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">CSS3</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/bootstrap.png"
+                        alt="Bootstrap"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Bootstrap</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/tailwind.png"
+                        alt="Tailwind"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Tailwind</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/js.png"
+                        alt="JavaScript"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">JavaScript</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/jquery.png"
+                        alt="jQuery"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">jQuery</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Backend Development Tab -->
+                <div id="backend" class="tab-pane tab-hide">
+                  <h3 class="text-white text-2xl mb-2 text-center">
+                    Backend Development
+                  </h3>
+                  <p
+                    class="text-gray-400 mb-6 text-center w-full md:w-3/5 mx-auto"
+                  >
+                    Backend Development involves architecting robust server-side
+                    solutions that power dynamic web applications. I specialize
+                    in building scalable and secure systems, integrating
+                    reliable databases, and developing comprehensive APIs to
+                    ensure efficient data management and seamless communication
+                    between clients and servers.
+                  </p>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/nodejs.png"
+                        alt="Node.js"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Node.js</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/php.png"
+                        alt="PHP"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">PHP</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/phpmyadmin.png"
+                        alt="phpMyAdmin"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">phpMyAdmin</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/mysql.png"
+                        alt="MySQL"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">MySQL</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/mariadb.png"
+                        alt="MariaDB"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">MariaDB</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tab IoT -->
+                <div id="iot" class="tab-pane tab-hide">
+                  <h3 class="text-white text-2xl mb-2 text-center">
+                    IoT Development
+                  </h3>
+                  <p
+                    class="text-gray-400 mb-6 text-center w-full md:w-3/5 mx-auto"
+                  >
+                    IoT Development focuses on integrating smart devices into
+                    cohesive networks that drive automation and connectivity. I
+                    design and implement IoT solutions that harness sensor data,
+                    leverage real-time processing, and facilitate secure
+                    communication protocols, enabling efficient monitoring,
+                    control, and analytics across various environments.
+                  </p>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/arduino.png"
+                        alt="Arduino"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Arduino</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/c++.png"
+                        alt="C++"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">C++</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tab Linux -->
+                <div id="linux" class="tab-pane tab-hide">
+                  <h3 class="text-white text-2xl mb-2 text-center">
+                    Linux Management
+                  </h3>
+                  <p
+                    class="text-gray-400 mb-6 text-center w-full md:w-3/5 mx-auto"
+                  >
+                    Linux Management entails overseeing server infrastructures
+                    to ensure reliability, performance, and security. My
+                    expertise in Linux administration involves configuring
+                    systems, managing updates and patches, and optimizing
+                    environments for high availability, which collectively
+                    contribute to the stability and efficiency of
+                    enterprise-level operations.
+                  </p>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/linux.png"
+                        alt="Linux"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Linux</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/apache.png"
+                        alt="Apache"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Apache</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/nginx.png"
+                        alt="Nginx"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Nginx</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tab Network -->
+                <div id="network" class="tab-pane tab-hide">
+                  <h3 class="text-white text-2xl mb-2 text-center">
+                    Network Administration
+                  </h3>
+                  <p
+                    class="text-gray-400 mb-6 text-center w-full md:w-3/5 mx-auto"
+                  >
+                    Network Administration is dedicated to maintaining and
+                    optimizing the connectivity that underpins modern IT
+                    infrastructures. I manage network configurations, monitor
+                    performance, and implement robust security protocols to
+                    guarantee uninterrupted data flow and secure communication
+                    across organizational networks.
+                  </p>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/cisco.png"
+                        alt="Cisco"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Cisco</p>
+                    </div>
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/mikrotik.png"
+                        alt="Mikrotik"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">Mikrotik</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tab Project Management -->
+                <div id="project" class="tab-pane tab-hide">
+                  <h3 class="text-white text-2xl mb-2 text-center">
+                    Project Management
+                  </h3>
+                  <p
+                    class="text-gray-400 mb-6 text-center w-full md:w-3/5 mx-auto"
+                  >
+                    Project Management is the strategic discipline of planning,
+                    executing, and delivering projects on time and within
+                    budget. With a focus on aligning technical initiatives with
+                    business goals, I lead cross-functional teams, streamline
+                    communication, and manage resources effectively, ensuring
+                    that projects are executed with precision and quality.
+                  </p>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <div
+                      class="bg-[#333333] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
+                    >
+                      <img
+                        src="/src/skills/github.png"
+                        alt="GitHub"
+                        class="w-15 mb-2"
+                      />
+                      <p class="text-center text-sm">GitHub</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- Add more backend skills as needed -->
-          </div>
-          <!-- IoT Development Tab -->
-          <div
-            id="iot"
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
-          >
-            <!-- Sample IoT Skill -->
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/arduino.png"
-                alt="Arduino"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm text-center">Arduino</p>
-            </div>
-            <!-- Add more IoT skills as needed -->
-          </div>
-          <!-- Linux Management Tab -->
-          <div
-            id="linux"
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
-          >
-            <!-- Sample Linux Management Skill -->
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/linux.png"
-                alt="Linux"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm text-center">Linux</p>
-            </div>
-            <!-- Add more Linux Management skills as needed -->
-          </div>
-          <!-- Network Administration Tab -->
-          <div
-            id="network"
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
-          >
-            <!-- Sample Network Administration Skills -->
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/cisco.png"
-                alt="Cisco"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm text-center">Cisco</p>
-            </div>
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/mikrotik.png"
-                alt="Mikrotik"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm text-center">Mikrotik</p>
-            </div>
-          </div>
-          <!-- Project Management Tab -->
-          <div
-            id="project"
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 tab-content tab-hide"
-          >
-            <!-- Sample Project Management Skill -->
-            <div
-              class="flex flex-col items-center border border-white rounded-lg p-4 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg"
-            >
-              <img
-                src="/src/skills/git.png"
-                alt="Git"
-                class="w-20 h-20 object-cover rounded"
-              />
-              <p class="mt-2 text-xs md:text-sm text-center">Git</p>
-            </div>
-            <!-- Add more project management skills as needed -->
           </div>
         </div>
       </div>
@@ -418,7 +621,7 @@
     <!-- Certificates Section -->
     <section class="py-16 bg-[#111111]">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-8 gradient-text">
+        <h2 class="text-4xl font-bold text-center mb-2 gradient-text">
           Certificates
         </h2>
         <p class="text-center text-white text-sm md:text-base mb-8">
