@@ -1,57 +1,48 @@
-// Seleksi semua tombol kategori berdasarkan id yang diawali "btn-"
+// Seleksi kontainer tab content untuk mengatur tinggi secara dinamis
+const tabContentContainer = document.querySelector(".tab-content");
+
+// Seleksi semua tombol yang memiliki id diawali 'btn-'
 const tabButtons = document.querySelectorAll("button[id^='btn-']");
 // Seleksi semua konten tab
-const tabPanes = document.querySelectorAll(".tab-pane");
+const tabPanes = document.querySelectorAll(".tab-pane2");
 
-/**
- * Fungsi untuk mengubah style tombol saat hover (true/false)
- * Berdasarkan status apakah tombol tersebut selected atau tidak.
- */
+// Fungsi untuk mengubah styling tombol saat hover
 function updateButtonStyleOnHover(btn, isHover) {
   if (isHover) {
-    // Saat hover: background berubah menjadi putih.
     btn.classList.remove("bg-[#444444]");
     btn.classList.add("bg-white");
-    // Jika tombol tidak selected, ubah teks menjadi hitam.
-    if (!btn.classList.contains("selected")) {
+    if (!btn.classList.contains("selected2")) {
       btn.classList.remove("text-white", "gradient-text", "hover:text-black");
       btn.classList.add("text-black");
     }
   } else {
-    // Saat tidak di-hover, kembalikan background ke #444444.
     btn.classList.remove("bg-white", "text-black");
     btn.classList.add("bg-[#444444]");
-    if (btn.classList.contains("selected")) {
-      // Untuk tombol selected: gunakan efek gradient untuk teks,
-      // hapus kelas hover:text-black, dan tambahkan hover:bg-white.
+    if (btn.classList.contains("selected2")) {
       btn.classList.remove("text-white", "hover:text-black");
       btn.classList.add("gradient-text", "hover:bg-white");
     } else {
-      // Untuk tombol yang tidak selected: kembalikan teks ke putih
-      // dan aktifkan kembali hover:text-black (pastikan hover:bg-white dihapus).
       btn.classList.remove("gradient-text", "hover:bg-white");
       btn.classList.add("text-white", "hover:text-black");
     }
   }
 }
 
-// Pasang event listener mouseenter dan mouseleave untuk semua tombol.
+// Pasang event listener untuk hover pada setiap tombol
 tabButtons.forEach((btn) => {
-  btn.addEventListener("mouseenter", () => {
-    updateButtonStyleOnHover(btn, true);
-  });
-  btn.addEventListener("mouseleave", () => {
-    updateButtonStyleOnHover(btn, false);
-  });
+  btn.addEventListener("mouseenter", () => updateButtonStyleOnHover(btn, true));
+  btn.addEventListener("mouseleave", () =>
+    updateButtonStyleOnHover(btn, false)
+  );
 });
 
-// Atur event click untuk mengubah state active (selected) dan menampilkan konten tab.
+// Pasang event listener untuk klik pada setiap tombol
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // Reset semua tombol ke style default (tidak selected: background #444444, teks putih)
+    // Reset styling semua tombol
     tabButtons.forEach((btn) => {
       btn.classList.remove(
-        "selected",
+        "selected2",
         "bg-white",
         "text-black",
         "gradient-text",
@@ -68,68 +59,66 @@ tabButtons.forEach((button) => {
       );
     });
 
-    // Tandai tombol yang diklik sebagai selected (aktif),
-    // hapus kelas hover:text-black dan tambahkan kelas hover:bg-white.
-    button.classList.add("selected");
+    // Tandai tombol yang diklik sebagai yang aktif
+    button.classList.add("selected2");
     button.classList.remove("hover:text-black");
     button.classList.add("hover:bg-white");
-    // Perbarui tampilannya sesuai dengan keadaan tidak di-hover.
     updateButtonStyleOnHover(button, false);
 
-    // Ubah semua konten tab ke state hide (menggunakan class custom dari style.css).
-    tabPanes.forEach((pane) => {
-      pane.classList.remove("tab-show");
-      pane.classList.add("tab-hide");
-    });
+    // Tangani transisi konten tab
+    const currentPane = document.querySelector(".tab-tertampil2");
+    // Ambil id target dari tombol (misal, 'btn-frontend' -> 'frontend')
+    const targetId = button.id.replace("btn-", "");
+    const targetPane = document.getElementById(targetId);
 
-    // Tampilkan konten tab yang sesuai (ubah class menjadi tab-show).
-    const target = button.getAttribute("id").replace("btn-", "");
-    const targetPane = document.getElementById(target);
-    targetPane.classList.remove("tab-hide");
-    targetPane.classList.add("tab-show");
+    // Jika tab yang sedang aktif sama dengan tab yang dituju, tidak perlu mengubah apa pun
+    if (!currentPane || currentPane === targetPane) return;
+
+    // Pertama, atur target tab agar tersembunyi (jika belum) agar tidak tampil di bawah
+    targetPane.classList.remove("tab-tertampil2", "geser-masuk2");
+    targetPane.classList.add("tab-tersembunyi2");
+
+    // Animasi keluar untuk konten tab yang sedang aktif
+    currentPane.classList.add("geser-keluar2");
+    currentPane.addEventListener("animationend", function handleAnimationEnd() {
+      currentPane.removeEventListener("animationend", handleAnimationEnd);
+      currentPane.classList.remove("tab-tertampil2", "geser-keluar2");
+      currentPane.classList.add("tab-tersembunyi2");
+
+      // Setelah animasi keluar selesai, atur tinggi kontainer secara dinamis
+      // Hapus terlebih dahulu kelas sembunyi pada target agar bisa diukur
+      targetPane.classList.remove("tab-tersembunyi2");
+      const targetHeight = targetPane.offsetHeight;
+      if (tabContentContainer) {
+        tabContentContainer.style.height = `${targetHeight}px`;
+      }
+      // Kembalikan target ke keadaan tersembunyi untuk animasi masuk
+      targetPane.classList.remove("tab-tertampil2");
+      targetPane.classList.add("tab-tersembunyi2");
+
+      // Beri jeda singkat sebelum memulai animasi masuk agar tumpang tindih tidak terjadi
+      setTimeout(() => {
+        // Tampilkan konten tab yang dituju dengan animasi masuk
+        targetPane.classList.remove("tab-tersembunyi2");
+        targetPane.classList.add("tab-tertampil2", "geser-masuk2");
+        targetPane.addEventListener(
+          "animationend",
+          function handleSlideInEnd() {
+            targetPane.removeEventListener("animationend", handleSlideInEnd);
+            targetPane.classList.remove("geser-masuk2");
+            // Setelah animasi selesai, hapus inline style tinggi pada kontainer
+            if (tabContentContainer) {
+              tabContentContainer.style.height = "";
+            }
+          }
+        );
+      }, 100); // jeda 100ms
+    });
   });
 });
 
-// Set default selected tab (untuk tombol Frontend Development)
+// Set default tab (misal: Frontend) dengan memicu klik pada tombol 'btn-frontend'
 const defaultTabButton = document.getElementById("btn-frontend");
 if (defaultTabButton) {
-  // Simulasikan klik pada tombol default agar semua style dan konten ter-update
   defaultTabButton.click();
 }
-
-// Ambil semua tombol kategori
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    // Dapatkan id target tab (misal: btn-frontend → frontend)
-    const targetTabId = button.id.replace("btn-", "");
-
-    // Cari tab yang sedang aktif
-    const currentTab = document.querySelector(".tab-tertampil");
-
-    // Jika tab yang diklik sama dengan tab aktif, tidak perlu melakukan apa-apa
-    if (!currentTab || currentTab.id === targetTabId) return;
-
-    // Mulai animasi keluar pada tab aktif
-    currentTab.classList.add("geser-keluar");
-
-    // Segera tampilkan tab target dengan animasi masuk
-    const targetTab = document.getElementById(targetTabId);
-    targetTab.classList.remove("tab-tersembunyi");
-    targetTab.classList.add("tab-tertampil", "geser-masuk");
-
-    // Setelah animasi keluar selesai, sembunyikan tab lama
-    currentTab.addEventListener("animationend", function handleAnimationEnd() {
-      currentTab.removeEventListener("animationend", handleAnimationEnd);
-      currentTab.classList.remove("tab-tertampil", "geser-keluar");
-      currentTab.classList.add("tab-tersembunyi");
-    });
-
-    // Setelah animasi masuk selesai, hapus kelas animasi
-    targetTab.addEventListener("animationend", function handleSlideInEnd() {
-      targetTab.removeEventListener("animationend", handleSlideInEnd);
-      targetTab.classList.remove("geser-masuk");
-    });
-  });
-});

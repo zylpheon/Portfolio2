@@ -1,8 +1,8 @@
 /* Animasi untuk geser keluar (ke kiri) */
-.geser-keluar {
-  animation: geserKeluar 0.3s forwards;
+.geser-keluar2 {
+  animation: geserKeluar2 0.5s forwards;
 }
-@keyframes geserKeluar {
+@keyframes geserKeluar2 {
   from {
     transform: translateX(0);
     opacity: 1;
@@ -14,10 +14,10 @@
 }
 
 /* Animasi untuk geser masuk (dari kanan) */
-.geser-masuk {
-  animation: geserMasuk 0.3s forwards;
+.geser-masuk2 {
+  animation: geserMasuk2 0.5s forwards;
 }
-@keyframes geserMasuk {
+@keyframes geserMasuk2 {
   from {
     transform: translateX(100%);
     opacity: 0;
@@ -28,10 +28,15 @@
   }
 }
 
-/* Contoh styling untuk menampilkan atau menyembunyikan konten tab */
-.tab-tertampil {
+/* Styling untuk menampilkan atau menyembunyikan konten tab */
+.tab-tertampil2 {
   display: block;
 }
-.tab-tersembunyi {
+.tab-tersembunyi2 {
   display: none;
+}
+.tab-content {
+  position: relative;
+  /* Tidak menggunakan min-height statis */
+  transition: height 0.3s ease;
 }
