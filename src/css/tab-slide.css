@@ -1,0 +1,37 @@
+/* Animasi untuk geser keluar (ke kiri) */
+.geser-keluar {
+  animation: geserKeluar 0.3s forwards;
+}
+@keyframes geserKeluar {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Animasi untuk geser masuk (dari kanan) */
+.geser-masuk {
+  animation: geserMasuk 0.3s forwards;
+}
+@keyframes geserMasuk {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Contoh styling untuk menampilkan atau menyembunyikan konten tab */
+.tab-tertampil {
+  display: block;
+}
+.tab-tersembunyi {
+  display: none;
+}

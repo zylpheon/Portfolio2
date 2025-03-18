@@ -10,7 +10,7 @@ const tabPanes = document.querySelectorAll(".tab-pane");
 function updateButtonStyleOnHover(btn, isHover) {
   if (isHover) {
     // Saat hover: background berubah menjadi putih.
-    btn.classList.remove("bg-[#333333]");
+    btn.classList.remove("bg-[#444444]");
     btn.classList.add("bg-white");
     // Jika tombol tidak selected, ubah teks menjadi hitam.
     if (!btn.classList.contains("selected")) {
@@ -18,9 +18,9 @@ function updateButtonStyleOnHover(btn, isHover) {
       btn.classList.add("text-black");
     }
   } else {
-    // Saat tidak di-hover, kembalikan background ke #333333.
+    // Saat tidak di-hover, kembalikan background ke #444444.
     btn.classList.remove("bg-white", "text-black");
-    btn.classList.add("bg-[#333333]");
+    btn.classList.add("bg-[#444444]");
     if (btn.classList.contains("selected")) {
       // Untuk tombol selected: gunakan efek gradient untuk teks,
       // hapus kelas hover:text-black, dan tambahkan hover:bg-white.
@@ -48,7 +48,7 @@ tabButtons.forEach((btn) => {
 // Atur event click untuk mengubah state active (selected) dan menampilkan konten tab.
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // Reset semua tombol ke style default (tidak selected: background #333333, teks putih)
+    // Reset semua tombol ke style default (tidak selected: background #444444, teks putih)
     tabButtons.forEach((btn) => {
       btn.classList.remove(
         "selected",
@@ -59,7 +59,7 @@ tabButtons.forEach((button) => {
         "hover:bg-white"
       );
       btn.classList.add(
-        "bg-[#333333]",
+        "bg-[#444444]",
         "text-white",
         "transition",
         "ease",
@@ -96,3 +96,40 @@ if (defaultTabButton) {
   // Simulasikan klik pada tombol default agar semua style dan konten ter-update
   defaultTabButton.click();
 }
+
+// Ambil semua tombol kategori
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Dapatkan id target tab (misal: btn-frontend → frontend)
+    const targetTabId = button.id.replace("btn-", "");
+
+    // Cari tab yang sedang aktif
+    const currentTab = document.querySelector(".tab-tertampil");
+
+    // Jika tab yang diklik sama dengan tab aktif, tidak perlu melakukan apa-apa
+    if (!currentTab || currentTab.id === targetTabId) return;
+
+    // Mulai animasi keluar pada tab aktif
+    currentTab.classList.add("geser-keluar");
+
+    // Segera tampilkan tab target dengan animasi masuk
+    const targetTab = document.getElementById(targetTabId);
+    targetTab.classList.remove("tab-tersembunyi");
+    targetTab.classList.add("tab-tertampil", "geser-masuk");
+
+    // Setelah animasi keluar selesai, sembunyikan tab lama
+    currentTab.addEventListener("animationend", function handleAnimationEnd() {
+      currentTab.removeEventListener("animationend", handleAnimationEnd);
+      currentTab.classList.remove("tab-tertampil", "geser-keluar");
+      currentTab.classList.add("tab-tersembunyi");
+    });
+
+    // Setelah animasi masuk selesai, hapus kelas animasi
+    targetTab.addEventListener("animationend", function handleSlideInEnd() {
+      targetTab.removeEventListener("animationend", handleSlideInEnd);
+      targetTab.classList.remove("geser-masuk");
+    });
+  });
+});
