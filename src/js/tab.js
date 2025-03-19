@@ -23,22 +23,21 @@ function updateButtonStyleOnHover(btn, isHover) {
       btn.classList.add("gradient-text", "hover:bg-white");
     } else {
       btn.classList.remove("gradient-text", "hover:bg-white");
-      btn.classList.add("text-white", "hover:text-black");
+      btn.classList.add("text-white");
     }
   }
 }
 
-// Pasang event listener untuk hover pada setiap tombol
-tabButtons.forEach((btn) => {
-  btn.addEventListener("mouseenter", () => updateButtonStyleOnHover(btn, true));
-  btn.addEventListener("mouseleave", () =>
-    updateButtonStyleOnHover(btn, false)
-  );
-});
+// Tambahkan variabel global untuk mengontrol delay klik
+let canClick = true;
 
-// Pasang event listener untuk klik pada setiap tombol
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    // Cek apakah klik dapat diproses
+    if (!canClick) return;
+    // Nonaktifkan klik sementara
+    canClick = false;
+
     // Reset styling semua tombol
     tabButtons.forEach((btn) => {
       btn.classList.remove(
@@ -55,11 +54,12 @@ tabButtons.forEach((button) => {
         "transition",
         "ease",
         "duration-300",
+        "hover:bg-white",
         "hover:text-black"
       );
     });
 
-    // Tandai tombol yang diklik sebagai yang aktif
+    // Tandai tombol yang diklik sebagai aktif
     button.classList.add("selected2");
     button.classList.remove("hover:text-black");
     button.classList.add("hover:bg-white");
@@ -67,14 +67,18 @@ tabButtons.forEach((button) => {
 
     // Tangani transisi konten tab
     const currentPane = document.querySelector(".tab-tertampil2");
-    // Ambil id target dari tombol (misal, 'btn-frontend' -> 'frontend')
     const targetId = button.id.replace("btn-", "");
     const targetPane = document.getElementById(targetId);
 
-    // Jika tab yang sedang aktif sama dengan tab yang dituju, tidak perlu mengubah apa pun
-    if (!currentPane || currentPane === targetPane) return;
+    // Jika tab yang aktif sama dengan target, jangan lakukan transisi
+    if (!currentPane || currentPane === targetPane) {
+      setTimeout(() => {
+        canClick = true;
+      }, 500);
+      return;
+    }
 
-    // Pertama, atur target tab agar tersembunyi (jika belum) agar tidak tampil di bawah
+    // Siapkan target pane agar tersembunyi sementara
     targetPane.classList.remove("tab-tertampil2", "geser-masuk2");
     targetPane.classList.add("tab-tersembunyi2");
 
@@ -85,20 +89,17 @@ tabButtons.forEach((button) => {
       currentPane.classList.remove("tab-tertampil2", "geser-keluar2");
       currentPane.classList.add("tab-tersembunyi2");
 
-      // Setelah animasi keluar selesai, atur tinggi kontainer secara dinamis
-      // Hapus terlebih dahulu kelas sembunyi pada target agar bisa diukur
+      // Atur tinggi kontainer secara dinamis
       targetPane.classList.remove("tab-tersembunyi2");
       const targetHeight = targetPane.offsetHeight;
       if (tabContentContainer) {
         tabContentContainer.style.height = `${targetHeight}px`;
       }
-      // Kembalikan target ke keadaan tersembunyi untuk animasi masuk
       targetPane.classList.remove("tab-tertampil2");
       targetPane.classList.add("tab-tersembunyi2");
 
-      // Beri jeda singkat sebelum memulai animasi masuk agar tumpang tindih tidak terjadi
+      // Beri jeda sebelum animasi masuk
       setTimeout(() => {
-        // Tampilkan konten tab yang dituju dengan animasi masuk
         targetPane.classList.remove("tab-tersembunyi2");
         targetPane.classList.add("tab-tertampil2", "geser-masuk2");
         targetPane.addEventListener(
@@ -106,19 +107,19 @@ tabButtons.forEach((button) => {
           function handleSlideInEnd() {
             targetPane.removeEventListener("animationend", handleSlideInEnd);
             targetPane.classList.remove("geser-masuk2");
-            // Setelah animasi selesai, hapus inline style tinggi pada kontainer
             if (tabContentContainer) {
               tabContentContainer.style.height = "";
             }
+            // Jika ingin mengaktifkan klik hanya setelah animasi selesai, aktifkan flag di sini
+            // canClick = true;
           }
         );
-      }, 100); // jeda 100ms
+      }, 100);
     });
+
+    // Kembalikan flag canClick setelah 1 detik
+    setTimeout(() => {
+      canClick = true;
+    }, 1000);
   });
 });
-
-// Set default tab (misal: Frontend) dengan memicu klik pada tombol 'btn-frontend'
-const defaultTabButton = document.getElementById("btn-frontend");
-if (defaultTabButton) {
-  defaultTabButton.click();
-}

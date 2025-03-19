@@ -38,5 +38,4 @@
 .tab-content {
   position: relative;
   /* Tidak menggunakan min-height statis */
-  transition: height 0.3s ease;
 }

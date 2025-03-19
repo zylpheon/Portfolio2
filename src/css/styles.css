@@ -48,12 +48,13 @@ html {
 .typed-cursor {
   color: #3ec5ff;
 }
-
+.height-transition {
+  transition: height 0.3s ease;
+}
 /* Atur transisi untuk setiap konten tab */
 .tab-content {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
 /* Tab yang disembunyikan: opacity 0, bergeser ke atas */
 .tab-hide {
   opacity: 0;
@@ -62,7 +63,6 @@ html {
   position: absolute;
   width: 100%;
 }
-
 /* Tab yang ditampilkan: opacity 1, posisi normal */
 .tab-show {
   opacity: 1;
@@ -70,7 +70,13 @@ html {
   pointer-events: auto;
   position: relative;
 }
-
+.vertical-divider {
+  width: 2px; /* Lebar divider */
+  height: 100px; /* Tinggi divider, sesuaikan dengan kebutuhan */
+  background-color: white; /* Warna putih */
+  margin: 0 10px; /* Jarak dari elemen di sekitarnya */
+  justify-self: center; /* Posisi di tengah */
+}
 /* CSS untuk carousel */
 #white-shadow {
   box-shadow: rgba(255, 255, 255, 0.2) 0px 20px 25px -15px,
