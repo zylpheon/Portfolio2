@@ -1,0 +1,43 @@
+/* Styles for project card toggle functionality */
+.hidden-card-3 {
+  display: none;
+}
+
+.fade-in-card-3 {
+  animation: fadeInCard3 0.5s ease forwards;
+}
+
+@keyframes fadeInCard3 {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#toggle-projects-3 {
+  margin: 2rem auto 0;
+  display: block;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#toggle-projects-3:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Hide button on larger screens */
+@media (min-width: 640px) {
+  #toggle-projects-3 {
+    display: none;
+  }
+}
