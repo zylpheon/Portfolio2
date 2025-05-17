@@ -16,9 +16,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body class="bg-black text-white">
-    <!-- Loading Overlay -->
     <div id="loader">
-      <!-- Bisa tambahkan spinner atau teks loading -->
       <div class="text-center">
         <div
           class="w-16 h-16 border-4 border-t-4 border-gray-300 rounded-full animate-spin"
@@ -26,8 +24,6 @@
         <p class="mt-4 text-white">Loading...</p>
       </div>
     </div>
-
-    <!-- Navbar -->
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-5">
       <nav
         class="fixed top-5 inset-x-0 mx-auto w-11/12 sm:w-10/12 lg:w-9/12 rounded-2xl sm:rounded-3xl lg:rounded-3xl bg-black bg-opacity-70 backdrop-blur-md border-b border-gray-700 p-5 flex justify-between items-center z-50"
@@ -41,7 +37,6 @@
         >
           Valentino
         </a>
-        <!-- Navbar Desktop (hanya muncul pada medium ke atas) -->
         <ul class="hidden md:flex space-x-6">
           <li>
             <a
@@ -89,7 +84,6 @@
             >
           </li>
         </ul>
-        <!-- Tombol Contact (hanya muncul pada desktop) -->
         <a
           href="#contact"
           class="hidden md:block px-4 py-2 border-2 border-white rounded-lg transition-colors duration-300 ease-in-out hover:bg-white hover:text-gray-900"
@@ -98,7 +92,6 @@
         >
           <strong>Contact Me</strong>
         </a>
-        <!-- Icon Hamburger (hanya tampil pada mobile) -->
         <i
           class="bx bx-menu-alt-right text-3xl block md:hidden cursor-pointer transition-all duration-300 ease-in-out"
           id="menu-toggle"
@@ -106,8 +99,6 @@
           data-aos-delay="300"
         ></i>
       </nav>
-
-      <!-- Dropdown Menu untuk Mobile -->
       <div
         id="dropdown-menu"
         class="fixed top-20 inset-x-0 mx-auto w-11/12 sm:w-10/12 lg:w-9/12 rounded-2xl sm:rounded-3xl lg:rounded-3xl bg-black bg-opacity-70 backdrop-blur-md border border-gray-700 shadow-lg transition-all duration-300 ease-in-out z-40"
@@ -158,8 +149,6 @@
         </ul>
       </div>
     </div>
-
-    <!-- Home Section -->
     <section
       id="home"
       class="min-h-screen flex flex-col items-center justify-center text-center px-6 md:px-20 lg:px-40 xl:px-60 pt-24 finisher-header"
@@ -198,20 +187,15 @@
         >
       </div>
     </section>
-
-    <!-- Gradient Divider -->
     <div
       id="about"
       style="position: relative; top: -15px; visibility: hidden; height: 0"
     ></div>
     <div class="w-full h-5 bg-gradient-to-b from-[#000000] to-[#111111]"></div>
-
-    <!-- About Me Section -->
     <section class="py-16 bg-[#111111]">
       <div
         class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 px-6"
       >
-        <!-- Gambar About Me (rasio 16:9) -->
         <div class="flex-shrink-0 w-full md:w-1/2">
           <img
             src="/src/images/about-me.jpg"
@@ -221,7 +205,6 @@
             data-aos="zoom-in-up"
           />
         </div>
-        <!-- Teks dan Icon Media Sosial -->
         <div
           class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-1/2"
         >
@@ -285,18 +268,13 @@
         </div>
       </div>
     </section>
-
-    <!-- Gradient Divider -->
     <div
       id="skills"
       style="position: relative; top: -15px; visibility: hidden; height: 0"
     ></div>
     <div class="w-full h-5 bg-gradient-to-b from-[#111111] to-[#444444]"></div>
-
-    <!-- Skills Section -->
     <section class="py-16 bg-[#444444] overflow-hidden height-transition">
       <div class="container mx-auto px-4">
-        <!-- Main Title -->
         <h2
           class="text-4xl font-bold mb-2 gradient-text text-center"
           data-aos="zoom-in-up"
@@ -310,9 +288,7 @@
         >
           Here are some of my skills.
         </p>
-        <!-- Layout: Mobile/Tablet: button kategori di atas, Desktop: dua kolom -->
         <div class="flex flex-col gap-10 w-4/5 mx-auto">
-          <!-- Kolom Button Kategori (lebih kecil lebarnya pada desktop) -->
           <div
             class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:flex lg:flex-row lg:w-full"
           >
@@ -364,12 +340,9 @@
               Project Management
             </button>
           </div>
-
-          <!-- Kolom Tab Content -->
           <div>
             <div class="rounded">
               <div class="tab-content konten-tab relative">
-                <!-- Frontend Development Tab (default aktif) -->
                 <div id="frontend" class="tab-pane2 tab-tertampil2">
                   <h3
                     class="text-white text-2xl mb-2 text-center"
@@ -390,9 +363,7 @@
                     dynamic and accessible web applications that effectively
                     bridge user needs with engaging digital interactions.
                   </p>
-                  <!-- Flex container untuk skill card -->
                   <div class="flex flex-wrap gap-4 justify-center">
-                    <!-- Contoh Skill: HTML5 -->
                     <div
                       class="bg-[#444444] rounded p-2 w-24 aspect-square transition ease duration-300 hover:bg-white hover:text-black flex flex-col justify-center items-center"
                       data-aos="zoom-in-up"
@@ -466,8 +437,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Backend Development Tab -->
                 <div id="backend" class="tab-pane2 tab-tersembunyi2">
                   <h3
                     class="text-white text-2xl mb-2 text-center"
@@ -549,8 +518,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Tab IoT -->
                 <div id="iot" class="tab-pane2 tab-tersembunyi2">
                   <h3
                     class="text-white text-2xl mb-2 text-center"
@@ -596,8 +563,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Tab Linux -->
                 <div id="linux" class="tab-pane2 tab-tersembunyi2">
                   <h3
                     class="text-white text-2xl mb-2 text-center"
@@ -656,8 +621,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Tab Network -->
                 <div id="network" class="tab-pane2 tab-tersembunyi2">
                   <h3
                     class="text-white text-2xl mb-2 text-center"
@@ -703,8 +666,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Tab Project Management -->
                 <div id="project" class="tab-pane2 tab-tersembunyi2">
                   <h3
                     class="text-white text-2xl mb-2 text-center"
@@ -756,7 +717,6 @@
         </div>
       </div>
     </section>
-
     <section class="pb-16 bg-[#444444]">
       <div class="max-w-7xl mx-auto px-6">
         <div
@@ -828,15 +788,11 @@
         </div>
       </div>
     </section>
-
-    <!-- Gradient Divider -->
     <div
       id="certificates"
       style="position: relative; top: -15px; visibility: hidden; height: 0"
     ></div>
     <div class="w-full h-5 bg-gradient-to-b from-[#444444] to-[#111111]"></div>
-
-    <!-- Certificates Section -->
     <section class="py-16 bg-[#111111]">
       <div class="max-w-7xl mx-auto px-6">
         <h2
@@ -852,7 +808,6 @@
         >
           Here are some of my achievements.
         </p>
-        <!-- Kontainer Carousel dengan lebar terbatas -->
         <div
           class="relative max-w-xl mx-auto"
           id="white-shadow3"
@@ -864,7 +819,6 @@
               id="carousel-inner3"
               class="flex transition-transform duration-500 w-full"
             >
-              <!-- Slide 1 -->
               <div class="flex-shrink-0 w-full min-w-full">
                 <img
                   src="/src/certificates/dicoding1.jpg"
@@ -872,7 +826,6 @@
                   class="mx-auto object-contain"
                 />
               </div>
-              <!-- Slide 2 -->
               <div class="flex-shrink-0 w-full min-w-full">
                 <img
                   src="/src/certificates/dicoding2.jpg"
@@ -880,7 +833,6 @@
                   class="mx-auto object-contain"
                 />
               </div>
-              <!-- Slide 3 -->
               <div class="flex-shrink-0 w-full min-w-full">
                 <img
                   src="/src/certificates/dicoding3.jpg"
@@ -888,7 +840,6 @@
                   class="mx-auto object-contain"
                 />
               </div>
-              <!-- Slide 4 -->
               <div class="flex-shrink-0 w-full min-w-full">
                 <img
                   src="/src/certificates/dicoding4.jpg"
@@ -896,7 +847,6 @@
                   class="mx-auto object-contain"
                 />
               </div>
-              <!-- Slide 5 -->
               <div class="flex-shrink-0 w-full min-w-full">
                 <img
                   src="/src/certificates/dicoding5.jpg"
@@ -904,7 +854,6 @@
                   class="mx-auto object-contain"
                 />
               </div>
-              <!-- Slide 6 -->
               <div class="flex-shrink-0 w-full min-w-full">
                 <img
                   src="/src/certificates/dicoding6.jpg"
@@ -914,7 +863,6 @@
               </div>
             </div>
           </div>
-          <!-- Kontrol Carousel dengan ikon Boxicons -->
           <button
             id="prev3"
             class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full"
@@ -930,15 +878,11 @@
         </div>
       </div>
     </section>
-
-    <!-- Gradient Divider -->
     <div
       id="projects"
       style="position: relative; top: -15px; visibility: hidden; height: 0"
     ></div>
     <div class="w-full h-5 bg-gradient-to-b from-[#111111] to-[#222222]"></div>
-
-    <!-- Projects Section -->
     <section class="py-16 bg-[#222222]">
       <div class="max-w-7xl mx-auto px-6">
         <h2
@@ -955,11 +899,9 @@
         >
           Here are some of my projects.
         </p>
-        <!-- Responsive grid: 1 column on mobile, 2 on tablet, 3 on desktop, centered -->
         <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
         >
-          <!-- Project Card 1 -->
           <div
             class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm"
             id="white-shadow"
@@ -967,25 +909,23 @@
             data-aos-delay="100"
           >
             <img
-              src="/src/projects/project1.jpg"
-              alt="Project 1"
+              src="/src/projects/project2.jpg"
+              alt="Project 2"
               class="w-full object-cover"
             />
             <div class="p-4">
-              <h3 class="text-xl font-bold text-white">Carousel Cafe</h3>
+              <h3 class="text-xl font-bold text-white">Coming Soon</h3>
               <p class="text-white text-sm mb-4">
-                A school assignment project showcasing a cozy cafe and bakery
-                ambiance.
+                Stay tuned for an upcoming project featuring innovative design
+                and exciting new features.
               </p>
               <a
-                href="https://carousel.my.id/"
                 class="inline-block px-4 py-2 border border-white rounded hover:bg-white hover:text-black transition-colors duration-300 ease-in-out"
               >
-                Visit Site
+                Coming Soon
               </a>
             </div>
           </div>
-          <!-- Project Card 2 -->
           <div
             class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm"
             id="white-shadow"
@@ -1010,7 +950,6 @@
               </a>
             </div>
           </div>
-          <!-- Project Card 3 -->
           <div
             class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm"
             id="white-shadow"
@@ -1038,15 +977,11 @@
         </div>
       </div>
     </section>
-
-    <!-- Gradient Divider -->
     <div
       id="contact"
       style="position: relative; top: -15px; visibility: hidden; height: 0"
     ></div>
     <div class="w-full h-5 bg-gradient-to-b from-[#222222] to-[#111111]"></div>
-
-    <!-- Contact Me Section -->
     <section class="py-16 bg-[#111111]">
       <div class="max-w-7xl mx-auto px-6">
         <h2
@@ -1088,21 +1023,16 @@
           >
             Send Message
           </button>
-          <!-- Element for menampilkan pesan -->
           <p id="form-feedback" class="mt-4 text-center text-green-400 hidden">
             Your message has been sent.
           </p>
         </form>
       </div>
     </section>
-
-    <!-- Gradient Divider -->
     <div
       class="w-full h-5 bg-gradient-to-b from-[#111111] to-[#222222]"
       id="contact"
     ></div>
-
-    <!-- Footer Section -->
     <footer class="py-8 bg-[#222222]">
       <div class="flex space-x-4 text-center justify-center">
         <a
@@ -1140,25 +1070,17 @@
         <p class="text-white">&copy; 2025 Valentino • All rights reserved.</p>
       </div>
     </footer>
-    <!-- Script for loading -->
     <script src="/src/js/loading.js"></script>
-    <!-- Script for Typed -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="/src/js/typed.js"></script>
-    <!-- Script for Carousel -->
     <script src="/src/js/carousel.js"></script>
-    <!-- Script for dropdown-menu -->
     <script src="/src/js/dropdown.js"></script>
-    <!-- Script for tab -->
     <script src="/src/js/tab.js"></script>
-    <!-- Script for Finisher Header -->
     <script
       src="/src/js/finisher-header.es5.min.js"
       type="text/javascript"
     ></script>
-    <!-- Script for particle -->
     <script type="text/javascript" src="/src/js/particle.js"></script>
-    <!-- Script for form -->
     <script src="/src/js/form.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

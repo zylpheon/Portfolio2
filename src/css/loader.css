@@ -1,14 +1,11 @@
-/* Styling untuk loader */
 #loader {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Efek scale out saat loader menghilang */
 .scale-out {
   transform: scale(0.8);
 }
 
-/* Pastikan loader memiliki posisi fixed dan z-index tinggi */
 #loader {
   position: fixed;
   top: 0;

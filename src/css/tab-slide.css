@@ -1,41 +1,43 @@
-/* Animasi untuk geser keluar (ke kiri) */
 .geser-keluar2 {
   animation: geserKeluar2 0.5s forwards;
 }
+
 @keyframes geserKeluar2 {
   from {
     transform: translateX(0);
     opacity: 1;
   }
+
   to {
     transform: translateX(-100%);
     opacity: 0;
   }
 }
 
-/* Animasi untuk geser masuk (dari kanan) */
 .geser-masuk2 {
   animation: geserMasuk2 0.5s forwards;
 }
+
 @keyframes geserMasuk2 {
   from {
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-/* Styling untuk menampilkan atau menyembunyikan konten tab */
 .tab-tertampil2 {
   display: block;
 }
+
 .tab-tersembunyi2 {
   display: none;
 }
+
 .tab-content {
   position: relative;
-  /* Tidak menggunakan min-height statis */
 }
