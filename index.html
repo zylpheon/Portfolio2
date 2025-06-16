@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/src/css/loader.css" />
     <link rel="stylesheet" href="./src/css/styles.css" />
     <link rel="stylesheet" href="./src/css/tab-slide.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/animations.css">
   </head>
   <body class="bg-black text-white">
     <div id="loader">
@@ -27,12 +27,12 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-5">
       <nav
         class="fixed top-5 inset-x-0 mx-auto w-11/12 sm:w-10/12 lg:w-9/12 rounded-2xl sm:rounded-3xl lg:rounded-3xl bg-black bg-opacity-70 backdrop-blur-md border-b border-gray-700 p-5 flex justify-between items-center z-50"
-        data-aos="fade-down"
+        data-animation="fade-down"
       >
         <a
           href="#"
           class="text-2xl font-bold gradient-text transition-all duration-300 ease-in-out hover:underline hover:decoration-green-400 hover:decoration-2"
-          data-aos="fade-down"
+          data-animation="fade-down"
           data-aos-delay="200"
         >
           Valentino
@@ -42,7 +42,7 @@
             <a
               href="#home"
               class="hover:text-green-400 transition-colors duration-300 ease-in-out hover:underline"
-              data-aos="fade-down"
+              data-animation="fade-down"
               data-aos-delay="300"
               >Home</a
             >
@@ -51,7 +51,7 @@
             <a
               href="#about"
               class="hover:text-green-400 transition-colors duration-300 ease-in-out hover:underline"
-              data-aos="fade-down"
+              data-animation="fade-down"
               data-aos-delay="350"
               >About</a
             >
@@ -60,7 +60,7 @@
             <a
               href="#skills"
               class="hover:text-green-400 transition-colors duration-300 ease-in-out hover:underline"
-              data-aos="fade-down"
+              data-animation="fade-down"
               data-aos-delay="400"
               >Skills</a
             >
@@ -210,7 +210,7 @@
         >
           <h2
             class="text-4xl font-bold mb-6 gradient-text"
-            data-aos="zoom-in-up"
+            data-animation="zoom-in-up"
           >
             About Me
           </h2>
@@ -1082,9 +1082,7 @@
     ></script>
     <script type="text/javascript" src="/src/js/particle.js"></script>
     <script src="/src/js/form.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script src="/src/js/animations/init.js"></script>
+    <script src="/src/js/animations/animation.js"></script>
   </body>
 </html>

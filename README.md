@@ -20,6 +20,7 @@ This portfolio website serves as a digital resume and showcase of my work as a d
 ## Technologies Used
 
 ### Frontend
+
 - HTML5
 - CSS3
 - JavaScript
@@ -29,6 +30,7 @@ This portfolio website serves as a digital resume and showcase of my work as a d
 - Typed.js
 
 ### Development Tools
+
 - Git & GitHub
 - Visual Studio Code
 
@@ -50,5 +52,7 @@ This portfolio website serves as a digital resume and showcase of my work as a d
 ## Setup and Installation
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/zylpheon/Portfolio-Remake
+git clone https://github.com/zylpheon/Portfolio2
+```
