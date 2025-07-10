@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="/src/css/loader.css" />
     <link rel="stylesheet" href="./src/css/styles.css" />
     <link rel="stylesheet" href="./src/css/tab-slide.css" />
-    <link rel="stylesheet" href="/src/css/animations.css">
+    <link rel="stylesheet" href="/src/css/animations.css" />
+    <link rel="stylesheet" href="/src/css/project-cards.css" />
   </head>
   <body class="bg-black text-white">
     <div id="loader">
@@ -194,7 +195,7 @@
     <div class="w-full h-5 bg-gradient-to-b from-[#000000] to-[#111111]"></div>
     <section class="py-16 bg-[#111111]">
       <div
-        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 px-6"
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 px-6"
       >
         <div class="flex-shrink-0 w-full md:w-1/2">
           <img
@@ -221,7 +222,7 @@
           >
             Hello! My name is Valentino, and I am a student at Depok 2
             Vocational High School in Yogjakarta, Indonesia. I am currently in
-            class XI and specializing in technology. I also enjoy photography
+            class XII and specializing in technology. I also enjoy photography
             and creative design.
           </p>
           <div class="flex space-x-4">
@@ -901,16 +902,17 @@
         </p>
         <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
+          id="projects-grid"
         >
           <div
-            class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm"
+            class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm project-card-3"
             id="white-shadow"
             data-aos="zoom-in-up"
             data-aos-delay="100"
           >
             <img
-              src="/src/projects/project2.jpg"
-              alt="Project 2"
+              src="/src/projects/project1.jpg"
+              alt="Project 1"
               class="w-full object-cover"
             />
             <div class="p-4">
@@ -927,13 +929,13 @@
             </div>
           </div>
           <div
-            class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm"
+            class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm project-card-3"
             id="white-shadow"
             data-aos="zoom-in-up"
             data-aos-delay="200"
           >
             <img
-              src="/src/projects/project2.jpg"
+              src="/src/projects/project1.jpg"
               alt="Project 2"
               class="w-full object-cover"
             />
@@ -951,13 +953,13 @@
             </div>
           </div>
           <div
-            class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm"
+            class="bg-[#111111] rounded-lg overflow-hidden shadow-lg w-full max-w-sm project-card-3"
             id="white-shadow"
             data-aos="zoom-in-up"
             data-aos-delay="300"
           >
             <img
-              src="/src/projects/project2.jpg"
+              src="/src/projects/project1.jpg"
               alt="Project 3"
               class="w-full object-cover"
             />
@@ -975,6 +977,9 @@
             </div>
           </div>
         </div>
+        <button id="toggle-projects-3" class="hidden mt-6">
+          <strong>Show More Projects</strong>
+        </button>
       </div>
     </section>
     <div
@@ -1084,5 +1089,6 @@
     <script src="/src/js/form.js"></script>
     <script src="/src/js/animations/init.js"></script>
     <script src="/src/js/animations/animation.js"></script>
+    <script src="/src/js/project-toggle.js"></script>
   </body>
 </html>

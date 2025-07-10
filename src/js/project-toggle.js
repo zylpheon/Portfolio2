@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       projectCards.forEach((card) => {
         card.classList.add("hidden-card-3");
       });
-      toggleButton.textContent = "Show More Projects";
+      toggleButton.innerHTML = "<strong>Show More Projects</strong>";
       toggleButton.classList.remove("hidden");
       cardsVisible = false;
     } else {
@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (cardsVisible) {
         card.classList.remove("hidden-card-3");
         card.classList.add("fade-in-card-3");
-        toggleButton.textContent = "Show Less";
+        toggleButton.innerHTML = "<strong>Show Less</strong>";
       } else {
         card.classList.add("hidden-card-3");
         card.classList.remove("fade-in-card-3");
-        toggleButton.textContent = "Show More Projects";
+        toggleButton.innerHTML = "<strong>Show More Projects</strong>";
       }
     });
   });
